@@ -1,0 +1,32 @@
+1) Analogy between O(1) and O(2^n):
+
+I think transportation is a good analogy, given that you get to your destination in a certain amount of time. O(1) is teleportation, O(2^n) is equivalent to walking with cement shoes.
+
+2) In plain English, what is the Best case scenario for binary search.
+
+It would be if for the very first iteration, the number we are searching for is found on the first pass. That is, the first "middle" value is the number we are searching for.
+
+3)  In plain English, what is the worst case scenario for binary search.
+
+Worst case scenario is that the number is not found, and that the number results from the very last iteration possible of the algorithm. That is, when middle value is the only value left to test, this would represent the worst case scenario.
+
+4) In plain English, what is the bounded-case scenario for binary search?
+
+It is the case that is neither the best or the worst case, but rather, exists and falls between the best and worst case complexity.
+
+5) Graph found here: https://docs.google.com/spreadsheets/d/1sIIbYvQH_6RA05tKZ-vyesqe8Ath6Px167z5vQ1nMZU/pubchart?oid=296664911&format=interactive
+
+6) the limit of the above graph as it approaches infinity is infinity.
+
+7) the graphs big O is O(n^2)
+
+8) check file linear_search_worst_case.rb
+
+9) graph for linear worst case. https://docs.google.com/spreadsheets/d/1sIIbYvQH_6RA05tKZ-vyesqe8Ath6Px167z5vQ1nMZU/pubchart?oid=70967880&format=interactive
+
+10) Big-O of binary search is log(n)
+
+11) Big-Omega is 1
+
+12) Big-Theta is log(n)
+
