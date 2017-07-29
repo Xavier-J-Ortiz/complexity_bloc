@@ -12,7 +12,7 @@ Worst case scenario is that the number is not found, and that the number results
 
 4) In plain English, what is the bounded-case scenario for binary search?
 
-It is the case that is neither the best or the worst case, but rather, exists and falls between the best and worst case complexity.
+It is the case that is neither the best or the worst case, but rather, exists and falls between the best and worst case complexity. Which is Big Theta.
 
 5) Graph found here: https://docs.google.com/spreadsheets/d/1sIIbYvQH_6RA05tKZ-vyesqe8Ath6Px167z5vQ1nMZU/pubchart?oid=296664911&format=interactive
 
