@@ -1,0 +1,25 @@
+1) It's O(1). Because no matter how big N is, it will only run a constant amount of times the puts argument. The constant in this method is just 1.
+
+2) It's O(n), because the `collection.length.times do |i|` operation will run `n` amount of times, where `n` is the size of the collection. though there are some lines of code before the `collection.length.times do |i|` these will be considered as a constant amount of code and will be considered irrelevant as `n` grows larger and tends to infinity.
+
+3) This is going to be O(n*m), assuming that the collection is of size `n` and the subcollection is of size `m`. The reason it is like this is because  the `collection.length.times do |i|` will run `n` times. Each entry in the `collection` will have a subcollection of size `m`, and hence, the `subcollection.length.times do |i|` will run `m` times. so if there are going to be `m` operations for each of the `n` subcollections, the amount of operations is going to be (n*m).
+
+Also, if m == n, then the algorithm will be O(n^2)
+
+4) This is O(2^n). `numbers(0)` and `numbers(1)` are of a single iteration each.`numbers(2)` iterations will be  the iterations of `number(1)` plus iteration of `number(2)` plus the sum operation, which could be considered as a single (1). So, `number(2)`'s iterations would be 3. Following this logic, `number(3)`'s iterations would be the iterations of `number(2)` plus iterations of `number(1)` plus one, that is `number(3)`'s iterations would be 5.
+
+This  calculation of the amount of iterations for the "n" input number is very similar to calculating a Fibonnaci number. Because of this, I was able to find a reference to the Binet Formula here: https://artofproblemsolving.com/wiki/index.php?title=Binet%27s_Formula
+
+On analyzing the Binet Formula (ignoring the constant (1 / sqrt(5)) ), the portion of the formula that is represented by ((1 - sqrt(5))/2)^n when n tends to infinity, will tend to 0, since the absolute value of ((1 - sqrt(5))/2) is less than 1. The other (overpowering) side of the formula ((1 + sqrt(5))/2)^n is greater than one. With this, we can safely assume that big-O is O(2^n).
+
+5) This is going to be O(n). The reasoning behind this is because for n = 0, n = 1, or n = 2 the method will not enter the while loop, and run in a constant amount of time. For n > 2, the while loop will iterate (n - 2) amount of times. as n tends to infinity, the "- 2" portion of that equation can be ignored and hence, what's left of the equation is "n", so big-O of that algorithm is O(n).
+
+6) I believe this is O(n*log(n)).  I will ignore everything before the while for the calculation of big-O, as these are a fixed amount of processes.
+
+The while loop will run (n-1) times until the min and max value do not satisfy the `min < max` inequality. After the while loop is done running, the pivot will divide the loop into two subcollections. On average, these subcollections the same size, or about half the original size of the original collection. These subcollections will, in total run an amount of (n / 2 - 1) operations each on account of their while loop. This first level of subcollections will run a total of 2 * (n / 2 - 1) iterations, for a total of (n - 2) iterations for this level.
+
+These first level subcollections will in turn be divided into further subcollections running approximately (n / 4 - 1) iterations on account of the while loop. And similarly, this second level of subcollections will run 4 * (n / 4 - 1) iterations, for a total of (n - 4) iterations for this level.
+
+When n tends to infinity, each level will run a collection of n operations. and on average when n tends to infinity, every level will be approximately half of the previous levels, meaning that the amount of split levels will be log(n). 
+
+So, if every level takes n operations, and there are about log(n) levels, big-O will be O(n*log(n)).
